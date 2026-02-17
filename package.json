@@ -1,0 +1,13 @@
+{
+  "name": "wintermute-cams",
+  "version": "1.0.0",
+  "description": "CAMS Research Platform - Complex Adaptive Model of Societies",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'Static site - no build needed'",
+    "start": "python -m http.server 8000"
+  },
+  "keywords": ["cams", "complexity", "societies", "research"],
+  "author": "Wintermute",
+  "license": "MIT"
+}

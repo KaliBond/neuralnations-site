@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAMS 3D Visualization - Neural Nations</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        .plot-container {
+            background: rgba(0, 0, 0, 0.9);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        #plot {
+            width: 100%;
+            height: 80vh;
+            min-height: 600px;
+        }
+        .viz-description {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">Neural Nations</a>
+            <div class="nav-menu">
+                <a href="/" class="nav-link">Home</a>
+                <a href="research.html" class="nav-link">Research</a>
+                <a href="attractors.html" class="nav-link">Attractors</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="visualization.html" class="nav-link active">Visualization</a>
+                <a href="mailto:kari.freyr.4@gmail.com" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="hero-section">
+            <h1>CAMS Attractor Space Visualization</h1>
+            <p class="hero-subtitle">3D Interactive Model of Power Type Dynamics</p>
+        </div>
+
+        <div class="viz-description">
+            <h2>🌐 Power Type Attractor Space</h2>
+            <p>This interactive 3D visualization shows how different power types create distinct attractor patterns in CAMS phase space. Each trajectory represents a different civilizational power structure evolving through the dimensions of <strong>Abstraction</strong>, <strong>Stress</strong>, and <strong>Control Capacity</strong>.</p>
+            
+            <div class="power-types-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0;">
+                <div style="background: #f0f8ff; padding: 1rem; border-radius: 8px; border-left: 4px solid deepskyblue;">
+                    <strong>🔬 Technocratic</strong><br>
+                    <small>Knowledge-driven governance, moderate complexity</small>
+                </div>
+                <div style="background: #f5f0ff; padding: 1rem; border-radius: 8px; border-left: 4px solid indigo;">
+                    <strong>⛪ Theocratic</strong><br>
+                    <small>Religious authority, high institutional stability</small>
+                </div>
+                <div style="background: #fff0f0; padding: 1rem; border-radius: 8px; border-left: 4px solid crimson;">
+                    <strong>⚔️ Militarist</strong><br>
+                    <small>Military-dominated, high stress tolerance</small>
+                </div>
+                <div style="background: #fffdf0; padding: 1rem; border-radius: 8px; border-left: 4px solid gold;">
+                    <strong>💰 Plutocratic</strong><br>
+                    <small>Wealth-concentrated power, economic focus</small>
+                </div>
+                <div style="background: #f0fff0; padding: 1rem; border-radius: 8px; border-left: 4px solid lime;">
+                    <strong>🗳️ Democratic</strong><br>
+                    <small>Distributed power, adaptive institutions</small>
+                </div>
+                <div style="background: #fff8f0; padding: 1rem; border-radius: 8px; border-left: 4px solid darkorange;">
+                    <strong>🏴‍☠️ Kleptocratic</strong><br>
+                    <small>Extractive governance, high instability</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="plot-container">
+            <div id="plot"></div>
+        </div>
+
+        <div class="viz-description">
+            <h2>🔍 How to Interpret the Visualization</h2>
+            <ul>
+                <li><strong>Trajectory Patterns:</strong> Each colored line shows how a power type evolves through the three-dimensional state space</li>
+                <li><strong>Attractor Basins:</strong> Stable regions where trajectories converge represent sustainable governance patterns</li>
+                <li><strong>Chaotic Regions:</strong> Areas where trajectories diverge indicate institutional instability</li>
+                <li><strong>Dimensional Meaning:</strong> X-axis (Abstraction), Y-axis (Stress), Z-axis (Control Capacity)</li>
+            </ul>
+            
+            <p><em>Rotate, zoom, and explore the 3D space to discover how different power structures create distinct patterns in civilizational dynamics.</em></p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 Kari McKern - Neural Nations CAMS Research</p>
+        <p><a href="https://sites.google.com/d/1c4xetr-EtuM4llYoFtv2-Jip2JARP095/p/1ZdDDsArXjlw6SZG_2HDsnCJ_7ycOaZEH/edit" target="_blank" style="color: rgba(255,255,255,0.8); text-decoration: underline;">View Original Google Sites Research Archive</a></p>
+    </footer>
+
+    <script>
+        function attractorPath(sigma, rho, beta, steps, dt, color, label) {
+            let x = 1, y = 1, z = 1;
+            const xVals = [], yVals = [], zVals = [];
+            for (let i = 0; i < steps; i++) {
+                const dx = sigma * (y - x);
+                const dy = x * (rho - z) - y;
+                const dz = x * y - beta * z;
+                x += dx * dt;
+                y += dy * dt;
+                z += dz * dt;
+                xVals.push(x);
+                yVals.push(y);
+                zVals.push(z);
+            }
+            return {
+                type: 'scatter3d',
+                mode: 'lines',
+                line: { width: 3, color: color },
+                x: xVals,
+                y: yVals,
+                z: zVals,
+                name: label
+            };
+        }
+
+        const powerTypes = [
+            { label: 'Technocratic', color: 'deepskyblue', rho: 30 },
+            { label: 'Theocratic', color: 'indigo', rho: 45 },
+            { label: 'Militarist', color: 'crimson', rho: 50 },
+            { label: 'Plutocratic', color: 'gold', rho: 40 },
+            { label: 'Democratic', color: 'lime', rho: 28 },
+            { label: 'Kleptocratic', color: 'darkorange', rho: 55 }
+        ];
+
+        const data = powerTypes.map(p =>
+            attractorPath(10, p.rho, 8/3, 3000, 0.01, p.color, p.label)
+        );
+
+        const layout = {
+            paper_bgcolor: 'rgba(0,0,0,0.9)',
+            plot_bgcolor: 'rgba(0,0,0,0.9)',
+            scene: {
+                bgcolor: 'rgba(0,0,0,0.9)',
+                xaxis: { 
+                    title: 'Abstraction', 
+                    titlefont: { color: 'white', size: 14 },
+                    tickfont: { color: 'white' },
+                    gridcolor: 'rgba(255,255,255,0.2)'
+                },
+                yaxis: { 
+                    title: 'Stress', 
+                    titlefont: { color: 'white', size: 14 },
+                    tickfont: { color: 'white' },
+                    gridcolor: 'rgba(255,255,255,0.2)'
+                },
+                zaxis: { 
+                    title: 'Control Capacity', 
+                    titlefont: { color: 'white', size: 14 },
+                    tickfont: { color: 'white' },
+                    gridcolor: 'rgba(255,255,255,0.2)'
+                },
+                camera: {
+                    eye: { x: 1.5, y: 1.5, z: 1.5 }
+                }
+            },
+            legend: {
+                font: { color: 'white', size: 12 },
+                bgcolor: 'rgba(0,0,0,0.5)',
+                bordercolor: 'rgba(255,255,255,0.3)',
+                borderwidth: 1,
+                x: 0,
+                y: 1
+            },
+            margin: { l: 0, r: 0, t: 0, b: 0 }
+        };
+
+        const config = {
+            responsive: true,
+            displayModeBar: true,
+            modeBarButtonsToRemove: ['pan2d', 'lasso2d']
+        };
+
+        Plotly.newPlot('plot', data, layout, config);
+    </script>
+</body>
+</html>

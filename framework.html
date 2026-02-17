@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAMS Framework - Neural Nations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Neural Nations</a>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="research.html" class="nav-link">Research</a>
+                <a href="framework.html" class="nav-link active">Framework</a>
+                <a href="datasets.html" class="nav-link">Data</a>
+                <a href="publications.html" class="nav-link">Publications</a>
+                <a href="collaboration.html" class="nav-link">Collaborate</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="hero-section">
+            <h1>CAMS Framework v2.1</h1>
+            <p class="hero-subtitle">Production-Ready Thermodynamic Framework</p>
+        </div>
+
+        <div class="framework-content">
+            <div class="tech-section">
+                <h2>🏗️ Architecture Overview</h2>
+                <div class="architecture-grid">
+                    <div class="arch-card">
+                        <h3>Thermodynamic Foundation</h3>
+                        <ul>
+                            <li>8 Institutional Nodes as energy-processing subsystems</li>
+                            <li>4 State Variables per node (C, K, S, A)</li>
+                            <li>Entropy flow and dissipative structure dynamics</li>
+                            <li>Phase transition detection via critical threshold analysis</li>
+                        </ul>
+                    </div>
+                    <div class="arch-card">
+                        <h3>Mathematical Core</h3>
+                        <ul>
+                            <li>Normalized end-to-end calculations</li>
+                            <li>Range-safe activation functions</li>
+                            <li>Discrete-time integration (Euler method)</li>
+                            <li>Error-driven capacity forecasting</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tech-section">
+                <h2>🧮 Core Mathematics</h2>
+                
+                <div class="formula-section">
+                    <h3>Entropy Rate Dynamics</h3>
+                    <div class="formula-block">
+                        <code>dS/dt = ε·(S_max - S) - ζ·C + γ·(1/K) - δ·A</code>
+                    </div>
+                    <p>Entropy accumulates under low coherence and capacity, and dissipates as abstraction increases. Constants: ε=0.20, ζ=0.18, γ=0.15, δ=0.12.</p>
+                </div>
+
+                <div class="formula-section">
+                    <h3>System Health Calculation</h3>
+                    <div class="formula-block">
+                        <code>H' = (Σ(C_i · K_i) / 8) / 100</code>
+                    </div>
+                    <p>Normalized system health based on coherence-capacity products.</p>
+                </div>
+
+                <div class="formula-section">
+                    <h3>Stress Normalization</h3>
+                    <div class="formula-block">
+                        <code>S̄' = S̄ / 10</code>
+                    </div>
+                    <p>Maps stress from [0, 10] to [0, 1] range for normalized calculations.</p>
+                </div>
+            </div>
+
+            <div class="tech-section">
+                <h2>🏛️ Institutional Nodes</h2>
+                <div class="nodes-grid">
+                    <div class="node-card">
+                        <h4>Executive (Helm)</h4>
+                        <p>Central decision-making and policy coordination</p>
+                    </div>
+                    <div class="node-card">
+                        <h4>Military (Shield)</h4>
+                        <p>Security, defense, and force projection capabilities</p>
+                    </div>
+                    <div class="node-card">
+                        <h4>Knowledge (Lore)</h4>
+                        <p>Education, research, and information processing</p>
+                    </div>
+                    <div class="node-card">
+                        <h4>Property (Stewards)</h4>
+                        <p>Ownership, investment, and capital management</p>
+                    </div>
+                    <div class="node-card">
+                        <h4>Trades (Craft)</h4>
+                        <p>Skilled professions and specialized services</p>
+                    </div>
+                    <div class="node-card">
+                        <h4>Labor (Hands)</h4>
+                        <p>Manual work and primary production</p>
+                    </div>
+                    <div class="node-card">
+                        <h4>Archives (Memory)</h4>
+                        <p>Information storage and institutional memory</p>
+                    </div>
+                    <div class="node-card">
+                        <h4>Merchants (Flow)</h4>
+                        <p>Trade, distribution, and market mechanisms</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tech-section">
+                <h2>💻 Implementation</h2>
+                <div class="code-section">
+                    <h3>Quick Start Example</h3>
+                    <pre><code>from cams_framework_v2_1 import CAMSNetwork, CAMSDataProcessor
+
+# Load and process data
+processor = CAMSDataProcessor()
+df = processor.load_society_data("data/cleaned/USA_cleaned.csv")
+
+# Create network for specific year
+network = processor.create_network_from_year(df, 2025)
+
+# Calculate key metrics
+psi = network.compute_psi_metric()
+health = network.compute_system_health()
+classification = network.classify_system_type()
+
+print(f"Ψ: {psi:.3f}")
+print(f"Health: {health:.3f}")
+print(f"Type: {classification}")
+</code></pre>
+                </div>
+
+                <div class="code-section">
+                    <h3>Batch Analysis</h3>
+                    <pre><code># Analyze multiple societies
+from cams_framework_v2_1 import run_cams_analysis
+
+societies = [
+    "data/cleaned/USA_cleaned.csv",
+    "data/cleaned/China_cleaned.csv", 
+    "data/cleaned/UK_cleaned.csv"
+]
+
+results = run_cams_analysis(societies)
+</code></pre>
+                </div>
+            </div>
+
+            <div class="tech-section">
+                <h2>✅ Validation</h2>
+                <div class="validation-grid">
+                    <div class="validation-card">
+                        <h3>USA 1861 Benchmark</h3>
+                        <p>All node values validated to exact historical specifications</p>
+                    </div>
+                    <div class="validation-card">
+                        <h3>Mathematical Consistency</h3>
+                        <p>End-to-end normalized calculations with unit testing</p>
+                    </div>
+                    <div class="validation-card">
+                        <h3>Production Safety</h3>
+                        <p>Robust error handling and edge case management</p>
+                    </div>
+                    <div class="validation-card">
+                        <h3>Cross-Validation</h3>
+                        <p>Historical event correlation and predictive accuracy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>Ready to Explore?</h2>
+            <p>Access the complete framework implementation and start your analysis.</p>
+            <div class="cta-buttons">
+                <a href="https://github.com/KaliBond/wintermute" class="btn-primary">View Repository</a>
+                <a href="datasets.html" class="btn-secondary">Explore Data</a>
+                <a href="mailto:kari.freyr.4@gmail.com" class="btn-secondary">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 Kari McKern - Neural Nations CAMS Research</p>
+    </footer>
+</body>
+</html>
