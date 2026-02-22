@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAMS Analysis Tools - Neural Nations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">Neural Nations</a>
+            <div class="nav-menu">
+                <a href="/" class="nav-link">Home</a>
+                <a href="research.html" class="nav-link">Research</a>
+                <a href="attractors.html" class="nav-link">Attractors</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="visualization.html" class="nav-link">Visualization</a>
+                <a href="cams.html" class="nav-link active">CAMS Tools</a>
+                <a href="mailto:kari.freyr.4@gmail.com" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="hero-section" style="background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8f 100%); padding: 60px 40px; border-radius: 12px; margin-bottom: 40px;">
+            <h1 style="font-size: 3em; margin-bottom: 20px;">🔬 CAMS Analysis Tools</h1>
+            <p class="hero-subtitle" style="font-size: 1.3em; margin-bottom: 30px;">
+                Interactive Dashboard for Advanced Institutional Analysis
+            </p>
+
+            <a href="https://cams-advanced-analysis.streamlit.app/" target="_blank"
+               style="display: inline-block; background: #3498db; color: white; padding: 20px 40px;
+                      border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1.2em;
+                      box-shadow: 0 6px 12px rgba(0,0,0,0.4); transition: all 0.3s;
+                      margin-top: 20px;">
+                🚀 Launch Advanced Analysis Dashboard →
+            </a>
+        </div>
+
+        <div class="content-grid">
+            <div class="research-card" style="background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);">
+                <h2>📊 dDIG Analysis</h2>
+                <p><strong>Directed Information Gain</strong> - Measure institutional influence through conditional mutual information.</p>
+                <ul>
+                    <li><strong>Causal Influence Ranking</strong>: Identify which nodes drive system change</li>
+                    <li><strong>Context Control</strong>: Account for regime type, shock intensity, and era</li>
+                    <li><strong>Information Transfer</strong>: Quantify predictive power in bits</li>
+                    <li><strong>Normalized Metrics</strong>: nDIG scores for cross-society comparison</li>
+                </ul>
+                <p style="margin-top: 15px; color: #95a5a6; font-size: 0.9em;">
+                    <strong>Use Case:</strong> Identify which institutions (Executive, Army, Priests, etc.) have the most predictive influence on system-wide dynamics.
+                </p>
+            </div>
+
+            <div class="research-card" style="background: linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%);">
+                <h2>🌀 Dyad Field Analysis</h2>
+                <p><strong>M-Y Dynamics</strong> - Track the tension between metabolic stress and mythic coherence.</p>
+                <ul>
+                    <li><strong>M (Metabolic Load)</strong>: Stress in material subsystem (Hands, Flow, Shield)</li>
+                    <li><strong>Y (Mythic Integration)</strong>: Coherence in meaning subsystem (Lore, Archive, Stewards)</li>
+                    <li><strong>D (Mismatch)</strong>: M - Y tension indicator</li>
+                    <li><strong>R (Risk)</strong>: Crisis potential from coupling weakness</li>
+                </ul>
+                <p style="margin-top: 15px; color: rgba(255,255,255,0.8); font-size: 0.9em;">
+                    <strong>Use Case:</strong> Monitor the balance between material capacity and ideological coherence. High mismatch (D) with weak coupling (low B) signals instability.
+                </p>
+            </div>
+
+            <div class="research-card" style="background: linear-gradient(135deg, #16a085 0%, #1abc9c 100%);">
+                <h2>🌌 Phase-Space Attractor</h2>
+                <p><strong>3D Trajectory Visualization</strong> - See institutional dynamics as trajectories through M-Y-B space.</p>
+                <ul>
+                    <li><strong>Attractor Basins</strong>: Identify stable equilibrium regions</li>
+                    <li><strong>Regime Detection</strong>: K-means clustering reveals distinct stability regimes</li>
+                    <li><strong>Transition Dynamics</strong>: Track rapid shifts between regimes</li>
+                    <li><strong>Phase Velocity</strong>: Measure speed of institutional change</li>
+                    <li><strong>2D Fallback Mode</strong>: Works even without Bond Strength data</li>
+                </ul>
+                <p style="margin-top: 15px; color: rgba(255,255,255,0.8); font-size: 0.9em;">
+                    <strong>Use Case:</strong> Visualize long-term system behavior. Tight spirals = stability, linear paths = directional change, jumps = shocks/crises.
+                </p>
+            </div>
+
+            <div class="research-card" style="background: linear-gradient(135deg, #d35400 0%, #e67e22 100%);">
+                <h2>📈 Combined Insights</h2>
+                <p><strong>Multi-Metric Analysis</strong> - Unified influence rankings across all CAMS metrics.</p>
+                <ul>
+                    <li><strong>Cognitive Influence</strong>: Average of Coherence, Capacity, Abstraction nDIG</li>
+                    <li><strong>Affective Influence</strong>: Stress-based nDIG scores</li>
+                    <li><strong>Composite Rankings</strong>: Weighted influence scores per institution</li>
+                    <li><strong>Heatmap Visualization</strong>: Per-metric nDIG across all nodes</li>
+                </ul>
+                <p style="margin-top: 15px; color: rgba(255,255,255,0.8); font-size: 0.9em;">
+                    <strong>Use Case:</strong> Get a holistic view of which institutions matter most across multiple dimensions.
+                </p>
+            </div>
+        </div>
+
+        <div class="research-card" style="background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%); margin-top: 40px;">
+            <h2>🎯 How to Use the Dashboard</h2>
+            <ol style="line-height: 1.8; font-size: 1.05em;">
+                <li><strong>Click "Launch Advanced Analysis Dashboard"</strong> above</li>
+                <li><strong>Select a dataset</strong> from the sidebar (50+ societies available) or upload your own CSV</li>
+                <li><strong>Navigate between tabs:</strong>
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li>📊 <strong>dDIG Analysis</strong> - Configure quantile bins and click "Compute dDIG"</li>
+                        <li>🌀 <strong>Dyad Field Analysis</strong> - View M-Y dynamics and phase space</li>
+                        <li>📈 <strong>Combined Insights</strong> - Click "Compute Full Influence Bundle"</li>
+                        <li>🌌 <strong>Phase-Space Attractor</strong> - Adjust smoothing, detect regimes</li>
+                    </ul>
+                </li>
+                <li><strong>Export results</strong> as JSON for further analysis</li>
+            </ol>
+        </div>
+
+        <div class="research-card" style="margin-top: 40px;">
+            <h2>📦 Dataset Format</h2>
+            <p>The dashboard expects CAMS long-format CSV files with these columns:</p>
+            <pre style="background: #1e2130; padding: 15px; border-radius: 5px; overflow-x: auto; font-size: 0.9em;">
+Society, Year, Node, Coherence, Capacity, Stress, Abstraction, Bond Strength (optional)
+
+Example:
+USA, 2025, Executive, 5, 6, 3, 7, 2.1
+USA, 2025, Army, 5, 7, 2, 6, 2.2
+USA, 2025, Priests, 7, 8, 1, 8, 2.8
+...</pre>
+            <p style="margin-top: 15px;">
+                <strong>Supported Nodes:</strong> Auto-detects any node names (Executive, Army, Priests, Property, Trades, Proletariat, StateMemory, Merchants, etc.)
+            </p>
+            <p>
+                <strong>Time Range:</strong> Minimum 2 years, recommended 50+ years for robust dDIG analysis
+            </p>
+        </div>
+
+        <div class="hero-section" style="margin-top: 60px; text-align: center; padding: 50px 40px;">
+            <h2 style="margin-bottom: 30px; font-size: 2.5em;">Ready to Analyze?</h2>
+            <a href="https://cams-advanced-analysis.streamlit.app/" target="_blank"
+               style="display: inline-block; background: #e74c3c; color: white; padding: 20px 50px;
+                      border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1.3em;
+                      box-shadow: 0 6px 12px rgba(0,0,0,0.4); transition: all 0.3s;">
+                🚀 Open Dashboard Now →
+            </a>
+            <p style="margin-top: 30px; font-size: 1.1em; color: #95a5a6;">
+                All analysis tools are free and open-source. View the code on
+                <a href="https://github.com/KaliBond/wintermute" target="_blank" style="color: #3498db; text-decoration: underline;">GitHub</a>.
+            </p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 Kari McKern - Neural Nations CAMS Research</p>
+        <p><a href="https://sites.google.com/d/1c4xetr-EtuM4llYoFtv2-Jip2JARP095/p/1ZdDDsArXjlw6SZG_2HDsnCJ_7ycOaZEH/edit" target="_blank" style="color: rgba(255,255,255,0.8); text-decoration: underline;">View Original Google Sites Research Archive</a></p>
+    </footer>
+</body>
+</html>
